@@ -53,7 +53,7 @@
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 3;
-            this.CancelButton.Text = "Cancel";
+            this.CancelButton.Text = "İptal";
             this.CancelButton.UseVisualStyleBackColor = true;
             // 
             // FindLabel
@@ -63,7 +63,7 @@
             this.FindLabel.Name = "FindLabel";
             this.FindLabel.Size = new System.Drawing.Size(69, 13);
             this.FindLabel.TabIndex = 5;
-            this.FindLabel.Text = "Value to find:";
+            this.FindLabel.Text = "Aranan Değer:";
             // 
             // FindTextBox
             // 
@@ -79,7 +79,7 @@
             this.CheckCase.Name = "CheckCase";
             this.CheckCase.Size = new System.Drawing.Size(94, 17);
             this.CheckCase.TabIndex = 7;
-            this.CheckCase.Text = "Case sensitive";
+            this.CheckCase.Text = "Büyük/Küçük Duyarlı";
             this.CheckCase.UseVisualStyleBackColor = true;
             this.CheckCase.CheckedChanged += new System.EventHandler(this.CheckCase_CheckedChanged);
             // 
@@ -90,7 +90,7 @@
             this.CheckAlsoHash.Name = "CheckAlsoHash";
             this.CheckAlsoHash.Size = new System.Drawing.Size(167, 17);
             this.CheckAlsoHash.TabIndex = 8;
-            this.CheckAlsoHash.Text = "Find also in hashes and labels";
+            this.CheckAlsoHash.Text = "HASH ve etiketler de Arayın";
             this.CheckAlsoHash.UseVisualStyleBackColor = true;
             this.CheckAlsoHash.CheckedChanged += new System.EventHandler(this.CheckAlsoHash_CheckedChanged);
             // 
@@ -112,7 +112,7 @@
             this.MinimizeBox = false;
             this.Name = "LabruneFind";
             this.ShowIcon = false;
-            this.Text = "Find";
+            this.Text = "Ara";
             this.ResumeLayout(false);
             this.PerformLayout();
 
