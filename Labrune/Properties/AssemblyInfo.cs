@@ -2,12 +2,12 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Labrune")]
-[assembly: AssemblyDescription("The Language Editor for NFS Games!")]
+[assembly: AssemblyTitle("SinnerClownCeviri.CoM")]
+[assembly: AssemblyDescription("NFS Oyunları İçin Dil Düzenleyici!")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("nlgzrgn")]
-[assembly: AssemblyProduct("Labrune")]
-[assembly: AssemblyCopyright("© 2020 nlgzrgn @ ExOpts Team. No rights reserved.")]
+[assembly: AssemblyCompany("LaZEnEs")]
+[assembly: AssemblyProduct("SinnerClownCeviri.CoM")]
+[assembly: AssemblyCopyright("© 2020 LaZEnEs @ SinnerClownCeviri Team. Tamamen Açık Kaynaktır.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
