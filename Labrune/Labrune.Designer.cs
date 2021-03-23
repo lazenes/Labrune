@@ -104,15 +104,15 @@
             this.toolStripSeparator5,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.fileToolStripMenuItem.Text = "Dosya";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.openToolStripMenuItem.Text = "Open...";
+            this.openToolStripMenuItem.Text = "Aç...";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
@@ -131,41 +131,41 @@
             this.ImportToolStripMenuItem.Enabled = false;
             this.ImportToolStripMenuItem.Name = "ImportToolStripMenuItem";
             this.ImportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ImportToolStripMenuItem.Text = "Import";
+            this.ImportToolStripMenuItem.Text = "İçe Aktar";
             // 
             // labruneTextFileToolStripMenuItem
             // 
             this.labruneTextFileToolStripMenuItem.Name = "labruneTextFileToolStripMenuItem";
-            this.labruneTextFileToolStripMenuItem.Size = new System.Drawing.Size(271, 22);
-            this.labruneTextFileToolStripMenuItem.Text = "Text File...";
+            this.labruneTextFileToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.labruneTextFileToolStripMenuItem.Text = "Metin Dosyası...";
             this.labruneTextFileToolStripMenuItem.Click += new System.EventHandler(this.LabruneTextFileToolStripMenuItem_Click);
             // 
             // edConfigurationsToolStripMenuItem
             // 
             this.edConfigurationsToolStripMenuItem.Name = "edConfigurationsToolStripMenuItem";
-            this.edConfigurationsToolStripMenuItem.Size = new System.Drawing.Size(271, 22);
-            this.edConfigurationsToolStripMenuItem.Text = "Ed Config Folder...";
+            this.edConfigurationsToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.edConfigurationsToolStripMenuItem.Text = "Ayar Klasörü...";
             this.edConfigurationsToolStripMenuItem.Click += new System.EventHandler(this.EdConfigurationsToolStripMenuItem_Click);
             // 
             // reCompilerConfigurationsToolStripMenuItem
             // 
             this.reCompilerConfigurationsToolStripMenuItem.Name = "reCompilerConfigurationsToolStripMenuItem";
-            this.reCompilerConfigurationsToolStripMenuItem.Size = new System.Drawing.Size(271, 22);
-            this.reCompilerConfigurationsToolStripMenuItem.Text = "ReCompiler Language Folder (New)...";
+            this.reCompilerConfigurationsToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.reCompilerConfigurationsToolStripMenuItem.Text = "Yeniden Derleyici Dil Klasörü (Yeni)...";
             this.reCompilerConfigurationsToolStripMenuItem.Click += new System.EventHandler(this.ReCompilerConfigurationsToolStripMenuItem_Click);
             // 
             // reCompilerOldToolStripMenuItem
             // 
             this.reCompilerOldToolStripMenuItem.Name = "reCompilerOldToolStripMenuItem";
-            this.reCompilerOldToolStripMenuItem.Size = new System.Drawing.Size(271, 22);
-            this.reCompilerOldToolStripMenuItem.Text = "ReCompiler Config.ini (Old)...";
+            this.reCompilerOldToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.reCompilerOldToolStripMenuItem.Text = "Yeniden Derleyici Config.ini(Eski)...";
             this.reCompilerOldToolStripMenuItem.Click += new System.EventHandler(this.ReCompilerOldToolStripMenuItem_Click);
             // 
             // langEdDumpToolStripMenuItem
             // 
             this.langEdDumpToolStripMenuItem.Name = "langEdDumpToolStripMenuItem";
-            this.langEdDumpToolStripMenuItem.Size = new System.Drawing.Size(271, 22);
-            this.langEdDumpToolStripMenuItem.Text = "LangEd Dump...";
+            this.langEdDumpToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.langEdDumpToolStripMenuItem.Text = "Dil dosyası Dökümü...";
             this.langEdDumpToolStripMenuItem.Click += new System.EventHandler(this.LangEdDumpToolStripMenuItem_Click);
             // 
             // exportToolStripMenuItem
@@ -176,21 +176,21 @@
             this.exportToolStripMenuItem.Enabled = false;
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
             this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exportToolStripMenuItem.Text = "Export";
+            this.exportToolStripMenuItem.Text = "Dışa Aktar";
             // 
             // textFileToolStripMenuItem
             // 
             this.textFileToolStripMenuItem.Name = "textFileToolStripMenuItem";
-            this.textFileToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
-            this.textFileToolStripMenuItem.Text = "Text File (All)...";
+            this.textFileToolStripMenuItem.Size = new System.Drawing.Size(320, 22);
+            this.textFileToolStripMenuItem.Text = "Metin Dosyası(Hepsi)...";
             this.textFileToolStripMenuItem.Click += new System.EventHandler(this.TextFileToolStripMenuItem_Click);
             // 
             // textFileModifiedEntriesOnlyToolStripMenuItem
             // 
             this.textFileModifiedEntriesOnlyToolStripMenuItem.Enabled = false;
             this.textFileModifiedEntriesOnlyToolStripMenuItem.Name = "textFileModifiedEntriesOnlyToolStripMenuItem";
-            this.textFileModifiedEntriesOnlyToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
-            this.textFileModifiedEntriesOnlyToolStripMenuItem.Text = "Text File (Modified entries only)...";
+            this.textFileModifiedEntriesOnlyToolStripMenuItem.Size = new System.Drawing.Size(320, 22);
+            this.textFileModifiedEntriesOnlyToolStripMenuItem.Text = "Metin Dosyası (Yalnızca değiştirilmiş girdiler) ...";
             this.textFileModifiedEntriesOnlyToolStripMenuItem.Click += new System.EventHandler(this.TextFileModifiedEntriesOnlyToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
@@ -204,7 +204,7 @@
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveToolStripMenuItem.Text = "Save...";
+            this.saveToolStripMenuItem.Text = "Kaydet...";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
@@ -217,7 +217,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Text = "Çıkış";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
@@ -237,16 +237,16 @@
             this.fontSettingsToolStripMenuItem,
             this.optionsToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.editToolStripMenuItem.Text = "Düzen";
             // 
             // AddToolStripMenuItem
             // 
             this.AddToolStripMenuItem.Enabled = false;
             this.AddToolStripMenuItem.Name = "AddToolStripMenuItem";
             this.AddToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.A)));
-            this.AddToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.AddToolStripMenuItem.Text = "Add...";
+            this.AddToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.AddToolStripMenuItem.Text = "Ekle...";
             this.AddToolStripMenuItem.Click += new System.EventHandler(this.AddToolStripMenuItem_Click);
             // 
             // EditStrToolStripMenuItem
@@ -254,8 +254,8 @@
             this.EditStrToolStripMenuItem.Enabled = false;
             this.EditStrToolStripMenuItem.Name = "EditStrToolStripMenuItem";
             this.EditStrToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
-            this.EditStrToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.EditStrToolStripMenuItem.Text = "Edit...";
+            this.EditStrToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.EditStrToolStripMenuItem.Text = "Düzenle...";
             this.EditStrToolStripMenuItem.Click += new System.EventHandler(this.EditStrToolStripMenuItem_Click);
             // 
             // RemoveToolStripMenuItem
@@ -263,22 +263,22 @@
             this.RemoveToolStripMenuItem.Enabled = false;
             this.RemoveToolStripMenuItem.Name = "RemoveToolStripMenuItem";
             this.RemoveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.R)));
-            this.RemoveToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.RemoveToolStripMenuItem.Text = "Remove";
+            this.RemoveToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.RemoveToolStripMenuItem.Text = "Sil";
             this.RemoveToolStripMenuItem.Click += new System.EventHandler(this.RemoveToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(218, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(226, 6);
             // 
             // SearchToolStripMenuItem
             // 
             this.SearchToolStripMenuItem.Enabled = false;
             this.SearchToolStripMenuItem.Name = "SearchToolStripMenuItem";
             this.SearchToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.SearchToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.SearchToolStripMenuItem.Text = "Find...";
+            this.SearchToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.SearchToolStripMenuItem.Text = "Ara...";
             this.SearchToolStripMenuItem.Click += new System.EventHandler(this.SearchToolStripMenuItem_Click);
             // 
             // FindPreviousToolStripMenuItem
@@ -286,8 +286,8 @@
             this.FindPreviousToolStripMenuItem.Enabled = false;
             this.FindPreviousToolStripMenuItem.Name = "FindPreviousToolStripMenuItem";
             this.FindPreviousToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.FindPreviousToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.FindPreviousToolStripMenuItem.Text = "Find Previous";
+            this.FindPreviousToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.FindPreviousToolStripMenuItem.Text = "Öncekini Bul";
             this.FindPreviousToolStripMenuItem.Click += new System.EventHandler(this.FindPreviousToolStripMenuItem_Click);
             // 
             // FindNextToolStripMenuItem
@@ -295,22 +295,22 @@
             this.FindNextToolStripMenuItem.Enabled = false;
             this.FindNextToolStripMenuItem.Name = "FindNextToolStripMenuItem";
             this.FindNextToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
-            this.FindNextToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.FindNextToolStripMenuItem.Text = "Find Next";
+            this.FindNextToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.FindNextToolStripMenuItem.Text = "Sonrakini Bul";
             this.FindNextToolStripMenuItem.Click += new System.EventHandler(this.FindNextToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(218, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(226, 6);
             // 
             // PrevModifiedToolStripMenuItem
             // 
             this.PrevModifiedToolStripMenuItem.Enabled = false;
             this.PrevModifiedToolStripMenuItem.Name = "PrevModifiedToolStripMenuItem";
             this.PrevModifiedToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4;
-            this.PrevModifiedToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.PrevModifiedToolStripMenuItem.Text = "Go to Previous Modified";
+            this.PrevModifiedToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.PrevModifiedToolStripMenuItem.Text = "Önceki Değiştirilenlere Git";
             this.PrevModifiedToolStripMenuItem.Click += new System.EventHandler(this.PrevModifiedToolStripMenuItem_Click);
             // 
             // NextModifiedToolStripMenuItem
@@ -318,29 +318,29 @@
             this.NextModifiedToolStripMenuItem.Enabled = false;
             this.NextModifiedToolStripMenuItem.Name = "NextModifiedToolStripMenuItem";
             this.NextModifiedToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F7;
-            this.NextModifiedToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.NextModifiedToolStripMenuItem.Text = "Go to Next Modified";
+            this.NextModifiedToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.NextModifiedToolStripMenuItem.Text = "Sonraki Değiştirilen\'e Git";
             this.NextModifiedToolStripMenuItem.Click += new System.EventHandler(this.NextModifiedToolStripMenuItem_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(218, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(226, 6);
             // 
             // fontSettingsToolStripMenuItem
             // 
             this.fontSettingsToolStripMenuItem.Name = "fontSettingsToolStripMenuItem";
             this.fontSettingsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F)));
-            this.fontSettingsToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.fontSettingsToolStripMenuItem.Text = "Font Settings...";
+            this.fontSettingsToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.fontSettingsToolStripMenuItem.Text = "Yazı Tipi Ayarları...";
             this.fontSettingsToolStripMenuItem.Click += new System.EventHandler(this.fontSettingsToolStripMenuItem_Click);
             // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.O)));
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.optionsToolStripMenuItem.Text = "Options...";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.optionsToolStripMenuItem.Text = "Ayarlar...";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.OptionsToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
@@ -348,15 +348,15 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutLabruneToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.helpToolStripMenuItem.Text = "Yardım";
             // 
             // aboutLabruneToolStripMenuItem
             // 
             this.aboutLabruneToolStripMenuItem.Name = "aboutLabruneToolStripMenuItem";
             this.aboutLabruneToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.aboutLabruneToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.aboutLabruneToolStripMenuItem.Text = "About Labrune...";
+            this.aboutLabruneToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutLabruneToolStripMenuItem.Text = "Hakkında...";
             this.aboutLabruneToolStripMenuItem.Click += new System.EventHandler(this.AboutLabruneToolStripMenuItem_Click);
             // 
             // LangStringView
@@ -392,12 +392,12 @@
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Label";
+            this.columnHeader3.Text = "Etiket";
             this.columnHeader3.Width = 240;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Text";
+            this.columnHeader4.Text = "Metin";
             this.columnHeader4.Width = 360;
             // 
             // LangChunkSelector
@@ -422,6 +422,7 @@
             this.LangStatusBar.Name = "LangStatusBar";
             this.LangStatusBar.Size = new System.Drawing.Size(800, 22);
             this.LangStatusBar.TabIndex = 3;
+            this.LangStatusBar.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.LangStatusBar_ItemClicked);
             // 
             // StatusBarText
             // 
@@ -471,7 +472,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.LangMenuBar;
             this.Name = "Labrune";
-            this.Text = "Labrune - The Language Editor for NFS Games!";
+            this.Text = "NFS Dil Dosyası Düzenleyicisi SinnerClownCeviri.com";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Labrune_FormClosing);
             this.LangMenuBar.ResumeLayout(false);
             this.LangMenuBar.PerformLayout();

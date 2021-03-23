@@ -36,8 +36,8 @@ namespace Labrune
             LabelTextBox.Text = Label;
             EditStringTextBox.Text = Value;
 
-            if (IsNewString) Text = ProductName + " " + "|" + " " + "Add New String";
-            else Text = ProductName + " " + "|" + " " + "Editing Item" + " " + "#" + ID + " " + "with Hash" + " " + Hash;
+            if (IsNewString) Text = ProductName + " " + "|" + " " + "Metin Eklendi";
+            else Text = ProductName + " " + "|" + " " + "Öğe Düzenlendi" + " " + "#" + ID + " " + "Hash değeri:" + " " + Hash;
         }
 
         private void CancelButton_Click(object sender, EventArgs e)

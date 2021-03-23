@@ -53,7 +53,7 @@
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 1;
-            this.CancelButton.Text = "Cancel";
+            this.CancelButton.Text = "İptal";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
@@ -63,7 +63,7 @@
             this.OKButton.Name = "OKButton";
             this.OKButton.Size = new System.Drawing.Size(75, 23);
             this.OKButton.TabIndex = 2;
-            this.OKButton.Text = "OK";
+            this.OKButton.Text = "TAMAM";
             this.OKButton.UseVisualStyleBackColor = true;
             this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
             // 
@@ -97,18 +97,18 @@
             this.LabelLabel.AutoSize = true;
             this.LabelLabel.Location = new System.Drawing.Point(242, 18);
             this.LabelLabel.Name = "LabelLabel";
-            this.LabelLabel.Size = new System.Drawing.Size(36, 13);
+            this.LabelLabel.Size = new System.Drawing.Size(37, 13);
             this.LabelLabel.TabIndex = 6;
-            this.LabelLabel.Text = "Label:";
+            this.LabelLabel.Text = "Etiket:";
             // 
             // CheckUseCustomHash
             // 
             this.CheckUseCustomHash.AutoSize = true;
             this.CheckUseCustomHash.Location = new System.Drawing.Point(680, 17);
             this.CheckUseCustomHash.Name = "CheckUseCustomHash";
-            this.CheckUseCustomHash.Size = new System.Drawing.Size(111, 17);
+            this.CheckUseCustomHash.Size = new System.Drawing.Size(120, 17);
             this.CheckUseCustomHash.TabIndex = 7;
-            this.CheckUseCustomHash.Text = "Use Custom Hash";
+            this.CheckUseCustomHash.Text = "Özel HASH Kullanın";
             this.CheckUseCustomHash.UseVisualStyleBackColor = true;
             this.CheckUseCustomHash.CheckedChanged += new System.EventHandler(this.CheckUseCustomHash_CheckedChanged);
             // 
@@ -130,7 +130,7 @@
             this.MinimizeBox = false;
             this.Name = "LabruneEdit";
             this.ShowIcon = false;
-            this.Text = "Labrune";
+            this.Text = "NFS Dil Dosyası Düzenleyici SinnerClownCeviri.Com";
             this.Load += new System.EventHandler(this.LabruneEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

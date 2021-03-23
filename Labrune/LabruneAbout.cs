@@ -20,7 +20,7 @@ namespace Labrune
             String VersionText = "v" + ProductVersion;
             int VersionDelta = Int32.Parse(VersionInfo[3]);
 
-            VersionText += " " + "(" + "Build" + " " + VersionInfo[0] + (Int32.Parse(VersionInfo[1]) != 0 ? VersionInfo[1] + "." : "") + ";" + " " + "Rev." + (Int32.Parse(VersionInfo[2]) < 10 ? "0" : "") + VersionInfo[2];
+            VersionText += " " + "(" + "Yapı" + " " + VersionInfo[0] + (Int32.Parse(VersionInfo[1]) != 0 ? VersionInfo[1] + "." : "") + ";" + " " + "Rev." + (Int32.Parse(VersionInfo[2]) < 10 ? "0" : "") + VersionInfo[2];
 
             if (VersionDelta >= 100 && VersionDelta < 200) VersionText += " " + "Milestone";
             else if (VersionDelta >= 200 && VersionDelta < 400) VersionText += " " + "ALPHA";
@@ -115,5 +115,15 @@ namespace Labrune
             }
         }
         #endregion
+
+        private void textBoxDescription_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LabruneAbout_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

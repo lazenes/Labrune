@@ -36,7 +36,7 @@ namespace Labrune
             while ((nc = rdr.ReadByte()) > 0)
                 bldr.Add(nc);
 
-            // TODO: Swap World Characters to make it more readable.
+       
 
             return Encoding.GetEncoding("ISO-8859-1").GetString(bldr.ToArray());
         }
@@ -52,7 +52,7 @@ namespace Labrune
 
                 LangFileArray[0] ^= 0x6B;
 
-                //File.Copy(LangFilePath, LangFilePath + ".bak", false);
+             
             }
 
             return new MemoryStream(LangFileArray);
@@ -408,8 +408,8 @@ namespace Labrune
             if (LangChunkSelector.Items.Count > 0)
             {
                 LangChunkSelector.SelectedItem = LangChunkSelector.Items[0];
-                StatusBarText.Text = "Ready.";
-                Text = "Labrune" + " - " + OpenLanguageFileDlg.FileName;
+                StatusBarText.Text = "Hazır.";
+                Text = OpenLanguageFileDlg.FileName;
                 EnableMenuOptions();
 
                 if (LangChunkSelector.Items.Count == 1) LangChunkSelector.Enabled = false;
@@ -417,7 +417,7 @@ namespace Labrune
             }
             else
             {
-                StatusBarText.Text = "No language chunks are detected in the selected file.";
+                StatusBarText.Text = "Seçili dosyada hiçbir dil parçası algılanmadı.";
                 DisableMenuOptions();
                 LangChunkSelector.Enabled = false;
             }
@@ -475,21 +475,21 @@ namespace Labrune
         {
             if (IsFileModified == true)
             {
-                //DialogResult result = MessageBox.Show("Would you like to save your changes before quitting?", "Labrune", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation);
 
                 TaskDialog ExitDialog = new TaskDialog();
                 ExitDialog.StandardButtons = TaskDialogStandardButtons.Yes | TaskDialogStandardButtons.No | TaskDialogStandardButtons.Cancel;
 
-                if (HasLabels && Properties.Settings.Default.AlsoSaveLabels)
+                if (HasLabels && NFS_Dil_Duzenleyici.Properties.Settings.Default.AlsoSaveLabels)
                 {
-                    ExitDialog.FooterText = "This operation will also save Labels file.";
+                    ExitDialog.FooterText = "Bu işlem aynı zamanda Etiketler dosyasını da kaydedecektir.";
+
                     ExitDialog.FooterIcon = TaskDialogStandardIcon.Information;
                 }
 
                 ExitDialog.Icon = TaskDialogStandardIcon.Warning;
-                ExitDialog.InstructionText = "Save?";
-                ExitDialog.Caption = "Labrune";
-                ExitDialog.Text = "Would you like to save your changes before quitting?";
+                ExitDialog.InstructionText = "Kaydet?";
+                ExitDialog.Caption = "SinnerClownCeviri.Com-LaZEnEs";
+                ExitDialog.Text = "Çıkmadan önce değişikliklerinizi kaydetmek ister misiniz?";
 
                 var result = ExitDialog.Show();
 
@@ -558,25 +558,23 @@ namespace Labrune
                     String Status = "Imported" + " " + ImportedEntries + " " + "entries for" + " " + LangChunks.Count + " " + "language chunk(s).";
                     if (IgnoredEntries > 0) Status += "\n" + "Ignored" + " " + IgnoredEntries + " " + "entries due to some formatting errors in selected text file.";
 
-                    //MessageBox.Show(Status, "Labrune", MessageBoxButtons.OK);
 
                     TaskDialog MsgDialog = new TaskDialog();
                     MsgDialog.StandardButtons = TaskDialogStandardButtons.Ok;
                     MsgDialog.Icon = TaskDialogStandardIcon.Information;
-                    MsgDialog.InstructionText = "Done!";
-                    MsgDialog.Caption = "Labrune";
+                    MsgDialog.InstructionText = "Bitti!";
+                    MsgDialog.Caption = "SinnerClownCeviri.Com-LaZEnEs"; 
                     MsgDialog.Text = Status;
                     MsgDialog.Show();
 
                 }
                 catch (Exception ex)
                 {
-                    //MessageBox.Show("There is something wrong with the selected text file." + Environment.NewLine + "It may be currently used, corrupted or Labrune doesn't have enough permissions to process it.", "Labrune", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     TaskDialog ErrDialog = new TaskDialog();
                     ErrDialog.StandardButtons = TaskDialogStandardButtons.Ok;
                     ErrDialog.Icon = TaskDialogStandardIcon.Error;
-                    ErrDialog.InstructionText = "Error!";
-                    ErrDialog.Caption = "Labrune";
+                    ErrDialog.InstructionText = "Hata!";
+                    ErrDialog.Caption = "SinnerClownCeviri.Com-LaZEnEs";
                     ErrDialog.Text = "There is something wrong with the selected text file." + Environment.NewLine + "It may be currently used, corrupted or Labrune doesn't have enough permissions to process it.";
                     ErrDialog.DetailsExpanded = false;
                     ErrDialog.DetailsExpandedText = ex.ToString();
@@ -733,13 +731,12 @@ namespace Labrune
 
                 else
                 {
-                    //MessageBox.Show("Search couldn't find anything with text \"" + Finder.ValueToFind + "\".", "Labrune", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     TaskDialog MsgDialog = new TaskDialog();
                     MsgDialog.StandardButtons = TaskDialogStandardButtons.Ok;
                     MsgDialog.Icon = TaskDialogStandardIcon.Warning;
-                    MsgDialog.InstructionText = "Not found.";
-                    MsgDialog.Caption = "Labrune";
-                    MsgDialog.Text = "Search couldn't find anything with text \"" + Finder.ValueToFind + "\".";
+                    MsgDialog.InstructionText = "Bulunamadı.";
+                    MsgDialog.Caption = "SinnerClownCeviri.Com-LaZEnEs";
+                    MsgDialog.Text = "Arama, metin içeren hiçbir şey bulamadı \"" + Finder.ValueToFind + "\".";
                     MsgDialog.Show();
 
                     FindNextToolStripMenuItem.Enabled = false;
@@ -779,7 +776,7 @@ namespace Labrune
         {
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
             dialog.IsFolderPicker = true;
-            dialog.Title = "Select the folder which contains Language Config files for ReCompiler";
+            dialog.Title = "Yeniden Derleme için Dil Yapılandırma dosyalarını içeren klasörü seçin";
 
             int ImportedEntries = 0;
             int IgnoredEntries = 0;
@@ -791,13 +788,12 @@ namespace Labrune
 
                 if (INIFiles.Length == 0)
                 {
-                    //MessageBox.Show("There aren't any ReCompiler Language Config files in the selected folder.", "Labrune", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     TaskDialog MsgNDialog = new TaskDialog();
                     MsgNDialog.StandardButtons = TaskDialogStandardButtons.Ok;
                     MsgNDialog.Icon = TaskDialogStandardIcon.Warning;
-                    MsgNDialog.InstructionText = "Not found.";
-                    MsgNDialog.Caption = "Labrune";
-                    MsgNDialog.Text = "There aren't any ReCompiler Language Config files in the selected folder.";
+                    MsgNDialog.InstructionText = "Bulunamadı.";
+                    MsgNDialog.Caption = "SinnerClownCeviri.Com-LaZEnEs";
+                    MsgNDialog.Text = "Seçili klasörde Yeniden Derleme Dil Ayar dosyası yok.";
                     MsgNDialog.Show();
                 }
                 else
@@ -826,15 +822,14 @@ namespace Labrune
                     }
                     UpdateAfterImport();
 
-                    String Status = "Imported" + " " + ImportedEntries + " " + "entries.";
-                    if (IgnoredEntries > 0) Status += "\n" + "Ignored" + " " + IgnoredEntries + " " + "entries due to some errors.";
+                    String Status = "İçe Aktarılan Toplam" + " " + ImportedEntries + " " + " girdi.";
+                    if (IgnoredEntries > 0) Status += "\n" + " Hatalı " + " " + IgnoredEntries + " " + "Kayıt Yok sayıldı";
 
-                    //MessageBox.Show(Status, "Labrune", MessageBoxButtons.OK);
                     TaskDialog MsgDialog = new TaskDialog();
                     MsgDialog.StandardButtons = TaskDialogStandardButtons.Ok;
                     MsgDialog.Icon = TaskDialogStandardIcon.Information;
-                    MsgDialog.InstructionText = "Done!";
-                    MsgDialog.Caption = "Labrune";
+                    MsgDialog.InstructionText = "Bitti!";
+                    MsgDialog.Caption = "SinnerClownCeviri.Com-LaZEnEs";
                     MsgDialog.Text = Status;
                     MsgDialog.Show();
                 }
@@ -845,7 +840,7 @@ namespace Labrune
         {
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
             dialog.IsFolderPicker = true;
-            dialog.Title = "Select the folder which contains Config files for Ed";
+            dialog.Title = "Yapılandırma dosyalarını içeren klasörü seçin.";
 
             int ImportedEntries = 0;
             int IgnoredEntries = 0;
@@ -858,13 +853,13 @@ namespace Labrune
 
                 if (INIFiles.Length == 0)
                 {
-                    //MessageBox.Show("There aren't any Ed Config files in the selected folder.", "Labrune", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                   
                     TaskDialog MsgNDialog = new TaskDialog();
                     MsgNDialog.StandardButtons = TaskDialogStandardButtons.Ok;
                     MsgNDialog.Icon = TaskDialogStandardIcon.Warning;
-                    MsgNDialog.InstructionText = "Not found.";
-                    MsgNDialog.Caption = "Labrune";
-                    MsgNDialog.Text = "There aren't any Ed Config files in the selected folder.";
+                    MsgNDialog.InstructionText = "Bulunamadı.";
+                    MsgNDialog.Caption = "SinnerClownCeviri.Com-LaZEnEs";
+                    MsgNDialog.Text = "Seçili klasörde hiç Config dosyası yok.";
                     MsgNDialog.Show();
                 }
                 else
@@ -877,7 +872,7 @@ namespace Labrune
 
                             int NumberOfResources = IniReader.GetInteger("RESOURCES", "NumberOfResources", 0, 0);
 
-                            if (NumberOfResources == 0) // Old ini format
+                            if (NumberOfResources == 0)
                             {
                                 String EdLabel = IniReader.GetValue("RESOURCES", "Label", "");
                                 String EdText = IniReader.GetValue("RESOURCES", "Name", "");
@@ -890,7 +885,7 @@ namespace Labrune
                                 }
                                 else NoEntries++;
                             }
-                            else // New ini format with multiple resoruces support
+                            else 
                             {
                                 for (int r = 1; r <= NumberOfResources; r++)
                                 {
@@ -899,8 +894,8 @@ namespace Labrune
 
                                     if (!(String.IsNullOrEmpty(EdLabel) || String.IsNullOrEmpty(EdText)))
                                     {
-                                        uint EdHash = (uint)BinHash.Hash(EdLabel); // Hash the label
-                                        AddNewStringRecord_NoUpdate(EdHash, EdLabel, EdText); // Add
+                                        uint EdHash = (uint)BinHash.Hash(EdLabel);
+                                        AddNewStringRecord_NoUpdate(EdHash, EdLabel, EdText); 
                                         ImportedEntries++;
                                     }
                                     else NoEntries++;
@@ -915,17 +910,17 @@ namespace Labrune
                 }
                 UpdateAfterImport();
 
-                String Status = "Imported" + " " + ImportedEntries + " " + "entries.";
-                if (NoEntries > 0) Status += "\n" + NoEntries + " " + "of the configuration files doesn't contain any string resources.";
-                if (IgnoredEntries > 0) Status += "\n" + "Ignored" + " " + IgnoredEntries + " " + "entries due to some errors.";
+                String Status = "Toplam" + " " + ImportedEntries + " " + "girdi İçe Aktarıldı.";
+                if (NoEntries > 0) Status += "\n" + NoEntries + " " + "yapılandırma dosyalarının% 'si herhangi bir dizi kaynağı içermiyor.";
+                if (IgnoredEntries > 0) Status += "\n" + "bazı hatalardan kaynaklanan girişler" + " " + IgnoredEntries + " " + "Yok sayıldı";
 
-                //MessageBox.Show(Status, "Labrune", MessageBoxButtons.OK);
+                
 
                 TaskDialog MsgDialog = new TaskDialog();
                 MsgDialog.StandardButtons = TaskDialogStandardButtons.Ok;
                 MsgDialog.Icon = TaskDialogStandardIcon.Information;
-                MsgDialog.InstructionText = "Done!";
-                MsgDialog.Caption = "Labrune";
+                MsgDialog.InstructionText = "Bitti!";
+                MsgDialog.Caption = "SinnerClownCeviri.Com-LaZEnEs";
                 MsgDialog.Text = Status;
                 MsgDialog.Show();
 
@@ -977,28 +972,26 @@ namespace Labrune
                     }
                     UpdateAfterImport();
 
-                    String Status = "Imported" + " " + ImportedEntries + " " + "entries.";
-                    if (IgnoredEntries > 0) Status += "\n" + "Ignored" + " " + IgnoredEntries + " " + "entries due to some formatting errors in selected text file.";
+                    String Status = "Toplam" + " " + ImportedEntries + " " + "Girdi içeri Aktarıldı.";
+                    if (IgnoredEntries > 0) Status += "\n" + "seçilen metin dosyasındaki bazı biçimlendirme hatalarından kaynaklanan girişler." + " " + IgnoredEntries + " " + "Yok sayıldı.";
 
-                    //MessageBox.Show(Status, "Labrune", MessageBoxButtons.OK);
 
                     TaskDialog MsgDialog = new TaskDialog();
                     MsgDialog.StandardButtons = TaskDialogStandardButtons.Ok;
                     MsgDialog.Icon = TaskDialogStandardIcon.Information;
-                    MsgDialog.InstructionText = "Done!";
-                    MsgDialog.Caption = "Labrune";
+                    MsgDialog.InstructionText = "Bitti!";
+                    MsgDialog.Caption = "SinnerClownCeviri.Com-LaZEnEs";
                     MsgDialog.Text = Status;
                     MsgDialog.Show();
                 }
                 catch (Exception ex)
                 {
-                    //MessageBox.Show("There is something wrong with the selected text file." + Environment.NewLine + "It may be currently used, corrupted or Labrune doesn't have enough permissions to process it.", "Labrune", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     TaskDialog ErrDialog = new TaskDialog();
                     ErrDialog.StandardButtons = TaskDialogStandardButtons.Ok;
                     ErrDialog.Icon = TaskDialogStandardIcon.Error;
-                    ErrDialog.InstructionText = "Error!";
-                    ErrDialog.Caption = "Labrune";
-                    ErrDialog.Text = "There is something wrong with the selected text file." + Environment.NewLine + "It may be currently used, corrupted or Labrune doesn't have enough permissions to process it.";
+                    ErrDialog.InstructionText = "Hata!";
+                    ErrDialog.Caption = "SinnerClownCeviri.Com-LaZEnEs";
+                    ErrDialog.Text = "Seçili metin dosyasında bir sorun var." + Environment.NewLine + " Şu anda kullanılmış, bozuk veya bunu işlemek için yeterli izne sahip değilsiniz.";
                     ErrDialog.DetailsExpanded = false;
                     ErrDialog.DetailsExpandedText = ex.ToString();
                     ErrDialog.ExpansionMode = TaskDialogExpandedDetailsLocation.ExpandFooter;
@@ -1019,9 +1012,9 @@ namespace Labrune
                         using (StreamWriter TXTFile = new StreamWriter(TXTFileName))
                         {
                             TXTFile.WriteLine("#\t" + Text);
-                            TXTFile.WriteLine("#\t" + "File created on: " + DateTime.Now.ToString());
+                            TXTFile.WriteLine("#\t" + "Dosya Oluşturuldu: " + DateTime.Now.ToString());
                             TXTFile.WriteLine("#");
-                            TXTFile.WriteLine("#" + "Chunk" + "\t" + "Hash (HEX)" + "\t" + "Label" + "\t" + "Value");
+                            TXTFile.WriteLine("#" + "Chunk" + "\t" + "Hash (HEX)" + "\t" + "Etiket" + "\t" + "Metin");
                             TXTFile.WriteLine("#" + " " + "---------------------------------------------------------------------------------------------------------");
 
                             foreach (LanguageChunk i in LangChunks)
@@ -1033,26 +1026,25 @@ namespace Labrune
                                 }
                             }
 
-                            //MessageBox.Show("All values are exported into" + "\n" + TXTFileName, "Labrune", MessageBoxButtons.OK);
                             TaskDialog MsgDialog = new TaskDialog();
                             MsgDialog.StandardButtons = TaskDialogStandardButtons.Ok;
                             MsgDialog.Icon = TaskDialogStandardIcon.Information;
-                            MsgDialog.InstructionText = "Done!";
-                            MsgDialog.Caption = "Labrune";
-                            MsgDialog.Text = "All values are exported into" + " " + TXTFileName;
+                            MsgDialog.InstructionText = "Bitti!";
+                            MsgDialog.Caption = "SinnerClownCeviri.Com-LaZEnEs";
+                            MsgDialog.Text = "Tüm değerler dışa aktarıldı" + " " + TXTFileName;
                             MsgDialog.Show();
                         }
 
                     }
                     catch (Exception ex)
                     {
-                        //MessageBox.Show("Values could not be exported.", "Labrune", MessageBoxButtons.OK);
+                       
                         TaskDialog ErrDialog = new TaskDialog();
                         ErrDialog.StandardButtons = TaskDialogStandardButtons.Ok;
                         ErrDialog.Icon = TaskDialogStandardIcon.Error;
-                        ErrDialog.InstructionText = "Error!";
-                        ErrDialog.Caption = "Labrune";
-                        ErrDialog.Text = "Values could not be exported.";
+                        ErrDialog.InstructionText = "Hata!";
+                        ErrDialog.Caption = "SinnerClownCeviri.Com-LaZEnEs";
+                        ErrDialog.Text = "Değerler dışa aktarılamadı.";
                         ErrDialog.DetailsExpanded = false;
                         ErrDialog.DetailsExpandedText = ex.ToString();
                         ErrDialog.ExpansionMode = TaskDialogExpandedDetailsLocation.ExpandFooter;
@@ -1078,7 +1070,7 @@ namespace Labrune
                     {
                         while ((TXTLineBuffer = TXTFile.ReadLine()) != null)
                         {
-                            if (!(TXTLineBuffer.StartsWith("#") || TXTLineBuffer.StartsWith("["))) // If it's not a comment or section name
+                            if (!(TXTLineBuffer.StartsWith("#") || TXTLineBuffer.StartsWith("[")))
                             {
                                 char[] charsToTrim = { '=' };
                                 String[] Parts = TXTLineBuffer.Split(charsToTrim, StringSplitOptions.RemoveEmptyEntries);
@@ -1106,28 +1098,26 @@ namespace Labrune
                     }
                     UpdateAfterImport();
 
-                    String Status = "Imported" + " " + ImportedEntries + " " + "entries.";
-                    if (IgnoredEntries > 0) Status += "\n" + "Ignored" + " " + IgnoredEntries + " " + "entries due to some formatting errors in selected text file.";
+                    String Status = "Toplam" + " " + ImportedEntries + " " + "Girdi içe Aktarıldı.";
+                    if (IgnoredEntries > 0) Status += "\n" + "seçili metin dosyasındaki bazı biçimlendirme hataları nedeniyle toplam."+ " " + IgnoredEntries + " " + " girişler Yok sayıldı";
 
-                    //MessageBox.Show(Status, "Labrune", MessageBoxButtons.OK);
                     TaskDialog MsgDialog = new TaskDialog();
                     MsgDialog.StandardButtons = TaskDialogStandardButtons.Ok;
                     MsgDialog.Icon = TaskDialogStandardIcon.Information;
-                    MsgDialog.InstructionText = "Done!";
-                    MsgDialog.Caption = "Labrune";
+                    MsgDialog.InstructionText = "Bitti!";
+                    MsgDialog.Caption = "SinnerClownCeviri.Com-LaZEnEs";
                     MsgDialog.Text = Status;
                     MsgDialog.Show();
 
                 }
                 catch (Exception ex)
                 {
-                    //MessageBox.Show("There is something wrong with the selected ReCompiler config file." + Environment.NewLine + "It may be currently used, corrupted or Labrune doesn't have enough permissions to process it.", "Labrune", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     TaskDialog ErrDialog = new TaskDialog();
                     ErrDialog.StandardButtons = TaskDialogStandardButtons.Ok;
                     ErrDialog.Icon = TaskDialogStandardIcon.Error;
-                    ErrDialog.InstructionText = "Error!";
-                    ErrDialog.Caption = "Labrune";
-                    ErrDialog.Text = "There is something wrong with the selected ReCompiler config file." + Environment.NewLine + "It may be currently used, corrupted or Labrune doesn't have enough permissions to process it.";
+                    ErrDialog.InstructionText = "Hata!";
+                    ErrDialog.Caption = "SinnerClownCeviri.Com-LaZEnEs";
+                    ErrDialog.Text = "Seçilen Yeniden Derleme yapılandırma dosyasında bir sorun var." + Environment.NewLine + "Şu anda kullanılmış, bozuk veya bunu işlemek için yeterli izne sahip değilsiniz.";
                     ErrDialog.DetailsExpanded = false;
                     ErrDialog.DetailsExpandedText = ex.ToString();
                     ErrDialog.ExpansionMode = TaskDialogExpandedDetailsLocation.ExpandFooter;
@@ -1194,7 +1184,7 @@ namespace Labrune
                 {
                     String LanguageFileName = SaveLanguageFileDlg.FileName;
                     String LabelFileType = SaveLanguageFileDlg.FileName.LastIndexOf('_') == -1 ? "" : SaveLanguageFileDlg.FileName.Substring(SaveLanguageFileDlg.FileName.LastIndexOf('_'));
-                    String LabelFileName = Path.Combine(Path.GetDirectoryName(SaveLanguageFileDlg.FileName), "Labels" + (String.IsNullOrEmpty(LabelFileType) ? ".bin" : LabelFileType));
+                    String LabelFileName = Path.Combine(Path.GetDirectoryName(SaveLanguageFileDlg.FileName), "Etiketler" + (String.IsNullOrEmpty(LabelFileType) ? ".bin" : LabelFileType));
                     int NrChkToWrite = 0;
 
                     // Re-read the opened file to take other chunks from it
@@ -1299,7 +1289,7 @@ namespace Labrune
                     LangFileWriter.Close();
 
                     // Take a backup
-                    if (Properties.Settings.Default.CreateBackups) File.Copy(LanguageFileName, LanguageFileName + "." + DateTime.Now.ToString("yyyyMMddHHmmss") + ".labrunebackup", false);
+                    if (NFS_Dil_Duzenleyici.Properties.Settings.Default.CreateBackups) File.Copy(LanguageFileName, LanguageFileName + "." + DateTime.Now.ToString("yyyyMMddHHmmss") + ".dildosyasiyedek", false);
 
                     // Copy tmp over the language file
                     if (File.Exists(LanguageFileName + ".tmp"))
@@ -1310,7 +1300,7 @@ namespace Labrune
                         
                     
                     // Label time!
-                    if (File.Exists(LabelFileName) && HasLabels && Properties.Settings.Default.AlsoSaveLabels)
+                    if (File.Exists(LabelFileName) && HasLabels && NFS_Dil_Duzenleyici.Properties.Settings.Default.AlsoSaveLabels)
                     {
                         NrChkToWrite = 0;
 
@@ -1416,7 +1406,7 @@ namespace Labrune
                         LabelFileWriter.Close();
 
                         // Take a backup
-                        if (Properties.Settings.Default.CreateBackups) File.Copy(LabelFileName, LabelFileName + "." + DateTime.Now.ToString("yyyyMMddHHmmss") + ".labrunebackup", false);
+                        if (NFS_Dil_Duzenleyici.Properties.Settings.Default.CreateBackups) File.Copy(LabelFileName, LabelFileName + "." + DateTime.Now.ToString("yyyyMMddHHmmss") + ".dildosyasiyedek", false);
 
                         // Copy tmp over the language file
                         if (File.Exists(LabelFileName + ".tmp"))
@@ -1426,26 +1416,24 @@ namespace Labrune
                         }
                     }
 
-                    //MessageBox.Show("File saved successfully.", "Labrune", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     TaskDialog MsgDialog = new TaskDialog();
                     MsgDialog.StandardButtons = TaskDialogStandardButtons.Ok;
                     MsgDialog.Icon = TaskDialogStandardIcon.Information;
-                    MsgDialog.InstructionText = "Done!";
-                    MsgDialog.Caption = "Labrune";
-                    MsgDialog.Text = "File saved succesfully.";
+                    MsgDialog.InstructionText = "Bitti!";
+                    MsgDialog.Caption = "SinnerClownCeviri.Com-LaZEnEs";
+                    MsgDialog.Text = "Dosya Baaşrıyla Kaydedildi.";
                     MsgDialog.Show();
                     MarkFileAsUnModified();
 
                 }
                 catch (Exception ex)
                 {
-                    //MessageBox.Show("Labrune was unable to save the language file." + Environment.NewLine + "It may be currently used, corrupted or Labrune doesn't have enough permissions to process it.", "Labrune", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     TaskDialog ErrDialog = new TaskDialog();
                     ErrDialog.StandardButtons = TaskDialogStandardButtons.Ok;
                     ErrDialog.Icon = TaskDialogStandardIcon.Error;
-                    ErrDialog.InstructionText = "Error!";
-                    ErrDialog.Caption = "Labrune";
-                    ErrDialog.Text = "Labrune was unable to save the language file." + Environment.NewLine + "It may be currently used, corrupted or Labrune doesn't have enough permissions to process it.";
+                    ErrDialog.InstructionText = "Hata!";
+                    ErrDialog.Caption = "SinnerClownCeviri.Com-LaZEnEs";
+                    ErrDialog.Text = "Dil dosyasını kaydedemedik." + Environment.NewLine + "Şu anda kullanılmış, bozuk veya  bunu işlemek için yeterli izne sahip değilsiniz.";
                     ErrDialog.DetailsExpanded = false;
                     ErrDialog.DetailsExpandedText = ex.ToString();
                     ErrDialog.ExpansionMode = TaskDialogExpandedDetailsLocation.ExpandFooter;
@@ -1480,9 +1468,9 @@ namespace Labrune
                             using (StreamWriter TXTFile = new StreamWriter(TXTFileName))
                             {
                                 TXTFile.WriteLine("#\t" + Text);
-                                TXTFile.WriteLine("#\t" + "File created on: " + DateTime.Now.ToString());
+                                TXTFile.WriteLine("#\t" + "Dosya oluşturuldu: " + DateTime.Now.ToString());
                                 TXTFile.WriteLine("#");
-                                TXTFile.WriteLine("#" + "Chunk" + "\t" + "Hash (HEX)" + "\t" + "Label" + "\t" + "Value");
+                                TXTFile.WriteLine("#" + "Chunk" + "\t" + "Hash (HEX)" + "\t" + "Etiket" + "\t" + "Değer");
                                 TXTFile.WriteLine("#" + " " + "---------------------------------------------------------------------------------------------------------");
 
                                 foreach (LanguageChunk i in LangChunks)
@@ -1494,26 +1482,24 @@ namespace Labrune
                                     }
                                 }
 
-                                //MessageBox.Show("All values are exported into" + "\n" + TXTFileName, "Labrune", MessageBoxButtons.OK);
                                 TaskDialog MsgDialog = new TaskDialog();
                                 MsgDialog.StandardButtons = TaskDialogStandardButtons.Ok;
                                 MsgDialog.Icon = TaskDialogStandardIcon.Information;
-                                MsgDialog.InstructionText = "Done!";
-                                MsgDialog.Caption = "Labrune";
-                                MsgDialog.Text = "All modified values are exported into" + " " + TXTFileName;
+                                MsgDialog.InstructionText = "Bitti!";
+                                MsgDialog.Caption = "SinnerClownCeviri.Com-LaZEnEs";
+                                MsgDialog.Text = "Değiştirilen tüm değerler şuraya aktarılır:" + " " + TXTFileName;
                                 MsgDialog.Show();
                             }
 
                         }
                         catch (Exception ex)
                         {
-                            //MessageBox.Show("Values could not be exported.", "Labrune", MessageBoxButtons.OK);
                             TaskDialog ErrDialog = new TaskDialog();
                             ErrDialog.StandardButtons = TaskDialogStandardButtons.Ok;
                             ErrDialog.Icon = TaskDialogStandardIcon.Error;
-                            ErrDialog.InstructionText = "Error!";
-                            ErrDialog.Caption = "Labrune";
-                            ErrDialog.Text = "Values could not be exported.";
+                            ErrDialog.InstructionText = "Hata!";
+                            ErrDialog.Caption = "SinnerClownCeviri.Com-LaZEnEs";
+                            ErrDialog.Text = "Değerler dışa aktarılamadı.";
                             ErrDialog.DetailsExpanded = false;
                             ErrDialog.DetailsExpandedText = ex.ToString();
                             ErrDialog.ExpansionMode = TaskDialogExpandedDetailsLocation.ExpandFooter;
@@ -1527,12 +1513,17 @@ namespace Labrune
                 TaskDialog MsgDialog = new TaskDialog();
                 MsgDialog.StandardButtons = TaskDialogStandardButtons.Ok;
                 MsgDialog.Icon = TaskDialogStandardIcon.Warning;
-                MsgDialog.InstructionText = "Warning!";
-                MsgDialog.Caption = "Labrune";
-                MsgDialog.Text = "There are no modified values.";
+                MsgDialog.InstructionText = "Uyarı!";
+                MsgDialog.Caption = "SinnerClownCeviri.Com-LaZEnEs";
+                MsgDialog.Text = "Değiştirilmiş değer yok.";
                 MsgDialog.Show();
             }
             
+        }
+
+        private void LangStatusBar_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

@@ -19,14 +19,14 @@ namespace Labrune
 
         public void LoadSettings()
         {
-            CheckSaveLabels.Checked = Properties.Settings.Default.AlsoSaveLabels;
-            CheckBackups.Checked = Properties.Settings.Default.CreateBackups;
+            CheckSaveLabels.Checked = NFS_Dil_Duzenleyici.Properties.Settings.Default.AlsoSaveLabels;
+            CheckBackups.Checked = NFS_Dil_Duzenleyici.Properties.Settings.Default.CreateBackups;
         }
 
         public void SaveSettings()
         {
-            Properties.Settings.Default.AlsoSaveLabels = CheckSaveLabels.Checked;
-            Properties.Settings.Default.CreateBackups = CheckBackups.Checked;
+            NFS_Dil_Duzenleyici.Properties.Settings.Default.AlsoSaveLabels = CheckSaveLabels.Checked;
+            NFS_Dil_Duzenleyici.Properties.Settings.Default.CreateBackups = CheckBackups.Checked;
         }
 
         private void LabruneOptions_Load(object sender, EventArgs e)
