@@ -9,3 +9,9 @@ Desteklenen Sürümler:
 - Need for Speed: ProStreet
 - Need for Speed: Undercover
 - Need for Speed: World
+
+Teşekkürler:
+Derleme İçin: nlgzrgn
+nfsu360 ya NFS-LangEd.için
+heyitsleo desteği için.
+379Felipe, Neon, RaTT test için
