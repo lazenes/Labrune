@@ -1,4 +1,4 @@
-# SinnerClownCeviri.Com - Need For Speed Oyunları İçiN dİL Dosyası Düzenleyici
+# SinnerClownCeviri.Com - Need For Speed Oyunları İçin Dil Dosyası Düzenleyici
 ---------------------------
 # Açıklama:
 Desteklenen Sürümler:
